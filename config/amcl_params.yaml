@@ -1,0 +1,22 @@
+use_map_topic: true
+odom_model_type: diff
+odom_frame_id: odom
+base_frame_id: base_footprint
+global_frame_id: map
+
+gui_publish_rate: 5.0
+min_particles: 100
+max_particles: 2000
+kld_err: 0.01
+update_min_d: 0.1
+update_min_a: 0.5
+resample_interval: 2
+transform_tolerance: 0.1
+
+laser_min_range: 0.1
+laser_max_range: 15.0
+laser_max_beams: 60
+# laser_z_hit: 0.5
+# laser_z_short: 0.05
+# laser_z_max: 0.05
+# laser_z_rand: 0.5

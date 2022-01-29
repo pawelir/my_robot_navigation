@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- Set the arguments -->
+    <arg name="scan_topic" default="/my_robot/front_laser_scan" />
+    <arg name="map_file" default="$(find my_robot_navigation)/maps/boiler_map.yaml"/>
+    
+    <!-- Provide a map -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    
+    <!-- Start the adaptive monte carlo localization AMCL -->
+    <node pkg="amcl" type="amcl" name="amcl">
+        <rosparam file="$(find my_robot_navigation)/config/amcl_params.yaml" command="load" />
+        <remap from="scan" to="$(arg scan_topic)"/>
+    </node>
+
+</launch>
+
+
