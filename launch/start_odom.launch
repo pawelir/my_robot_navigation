@@ -1,5 +1,4 @@
-<!-- Start oublish odometry from gazebo data -->
 
 <launch>
-    <node name="odom_pub" pkg="my_robot_navigation" type="odom.py" output="screen"/>
+    <node name="simulated_odometry" pkg="my_robot_navigation" type="simulated_odometry.py" output="screen"/>
 </launch>
